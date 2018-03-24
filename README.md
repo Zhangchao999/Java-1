@@ -10,5 +10,5 @@ TOP
 
 ### Java内存管理机制
 
-！[java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/1.jpg)
+![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/1.jpg)
 
