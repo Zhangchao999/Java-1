@@ -12,3 +12,5 @@ TOP
 
 ![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/1.jpg)
 
+![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/2.jpg)
+
