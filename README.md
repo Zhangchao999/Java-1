@@ -57,8 +57,8 @@ TOP
 
 讲解:<br>
 
-1、堆(Heap):<br>
-所以new出来的对象都分配在堆中，堆分成年轻代(YoungGeneration)和老年代(OldGeneration)，年轻代分为一个Eden区和两个Survivor区(默认比例是 8:1)
+1、堆(Heap):
+> 所以new出来的对象都分配在堆中，堆分成年轻代(YoungGeneration)和老年代(OldGeneration)，年轻代分为一个Eden区和两个Survivor区(默认比例是 8:1)
 
 >> 1.1 MinorGC
 
@@ -67,10 +67,25 @@ TOP
 >>> 大多数的新建的对象位于Eden区，当Eden区占满后，会出发MinorGC，存活下来的对象全部转到survivor0区，survivor0区占满后会触发MinorGC，survivor0区存活的对象全部转到survivor1区，这要就会保证一段时间内总有一个survivor区是空的。经过多次的MinorGC任然存货的对象会转到老年代，这个指由设定的年龄阀值所决定。
 
 
->>1.2 MajorGC
+>> 1.2 MajorGC
 
+>>> 老年代空间长期存活的对象，在被占满时会触发MajorGC，花费时间较长，由于垃圾回收会导致"stoptheworld"事件，及所有的线程都会停下来等待垃圾回收完成，因此，对于相应高的应用要尽量减少MajorGC，如微博后台发生MajorGC会导致前台页面刷新超时。
 
 2、永生代
+> PermanentGeneration 是用来保存程序运行时长期存活的对象，如类的元数据。
+（元数据是指用来描述数据的数据，更通俗一点，就是描述代码间关系，或者代码与其他资源（例如数据库表）之间内在联系的数据。）
+
+> 在jdk1.8 中用Metaspace替换PermanentGeneration
+>> 依据:1官方文档是 This is part of the JRockit and Hotspot convergence effort. JRockit customers do not need to configure the permanent generation (since JRockit does not have a permanent generation) and are accustomed to not configuring the permanent generation.即：移除永久代是为融合HotSpot JVM与 JRockit VM而做出的努力，因为JRockit没有永久代，不需要配置永久代。
+>> 依据:2现实使用中易出问题 由于永久代内存经常不够用或发生内存泄露，爆出异常java.lang.OutOfMemoryError: PermGen
+>> 元空间是方法区的在HotSpot jvm 中的实现，方法区主要用于存储类的信息、常量池、方法数据、方法代码等。方法区逻辑上属于堆的一部分，但是为了与堆进行区分，通常又叫“非堆”。元空间的本质和永久代类似，都是对JVM规范中方法区的实现。不过元空间与永久代之间最大的区别在于：元空间并不在虚拟机中，而是使用本地内存。，理论上取决于32位/64位系统可虚拟的内存大小。可见也不是无限制的，需要配置参数。
+
+3、NativeArea
+
+>> 3.1 PC程序计数器: 即上面所说的程序计数器
+
+>> 3.2 本地方法栈: 即上面所说的本地方法栈
+
 
 
 
