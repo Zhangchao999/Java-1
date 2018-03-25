@@ -13,9 +13,6 @@ TOP
 ![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/1.jpg)
 <br>图1
 
-![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/2.jpg)
-<br>图2
-
 <br>
 讲解:<br>
 从线程的私有还是共享来说：<br>
@@ -48,6 +45,9 @@ TOP
 
 > intern方法: 返回字符串对象的规范表示。 最初的空的字符串由String类String。当调用intern方法时，如果池中包含与equals(Object)方法确定的相当于此String对象的字符串，则返回来自池中的字符串。否则，将该String对象添加到池中，并返回，String对象的引用。由此可见，对于任何两个字符串s和t ， s.intern() == t.intern()是true当且仅当s.equals(t)是true 。
 
+
+![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/2.jpg)
+<br>图2:jdk1.8之前的内存
 
 
 
