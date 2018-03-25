@@ -11,7 +11,10 @@ TOP
 ### Java内存管理机制
 
 ![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/1.jpg)
-<br>图1
+<br>
+<p align = "center">
+图1
+</p>
 
 <br>
 讲解:<br>
@@ -47,7 +50,11 @@ TOP
 
 
 ![java内存](https://github.com/Zhangchao999/Java-1/raw/master/pictures/2.jpg)
-<br>图2:jdk1.8之前的内存
+<br>
+<p align="center">
+	图2:jdk1.8之前的内存
+</p>
+
 
 
 
