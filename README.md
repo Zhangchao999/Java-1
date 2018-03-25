@@ -57,7 +57,7 @@ TOP
 
 讲解:<br>
 
-> 1、堆(Heap):<br>
+1、堆(Heap):<br>
 所以new出来的对象都分配在堆中，堆分成年轻代(YoungGeneration)和老年代(OldGeneration)，年轻代分为一个Eden区和两个Survivor区(默认比例是 8:1)
 
 >> 1.1 MinorGC
@@ -70,7 +70,7 @@ TOP
 >>1.2 MajorGC
 
 
->2、永生代
+2、永生代
 
 
 
