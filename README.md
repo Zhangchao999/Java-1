@@ -75,7 +75,7 @@ TOP
 > PermanentGeneration 是用来保存程序运行时长期存活的对象，如类的元数据。
 （元数据是指用来描述数据的数据，更通俗一点，就是描述代码间关系，或者代码与其他资源（例如数据库表）之间内在联系的数据。）
 
-> 在jdk1.8 中用Metaspace替换PermanentGeneration
+> 在jdk1.8 中用元空间(Metaspace)替换永久代(PermanentGeneration)
 >> 依据:1官方文档是 This is part of the JRockit and Hotspot convergence effort. JRockit customers do not need to configure the permanent generation (since JRockit does not have a permanent generation) and are accustomed to not configuring the permanent generation.即：移除永久代是为融合HotSpot JVM与 JRockit VM而做出的努力，因为JRockit没有永久代，不需要配置永久代。
 
 >> 依据:2现实使用中易出问题 由于永久代内存经常不够用或发生内存泄露，爆出异常java.lang.OutOfMemoryError: PermGen
