@@ -62,6 +62,10 @@ TOP
 
 >> 1.1 MinorGC
 
+>>> 年轻代是所有新对象的产生地方。当年轻代的内存空间被用完是，会出发垃圾回收。这个垃圾回收叫做MinorGC。
+
+>>> 大多数的新建的对象位于Eden区，当Eden区占满后，会出发MinorGC，存活下来的对象全部转到survivor0区，survivor0区占满后会触发MinorGC，survivor0区存活的对象全部转到survivor1区，这要就会保证一段时间内总有一个survivor区是空的。经过多次的MinorGC任然存货的对象会转到老年代，这个指由设定的年龄阀值所决定。
+
 
 >>1.2 MajorGC
 
